@@ -33,4 +33,8 @@ def test_scaffold_cache(scaffold_module: Scaffold):
 
 
 def test_scaffold_init(scaffold_module: Scaffold):
-    scaffold_module.init_scaffold()
+    env = "testing"
+    scaffold_module.init_scaffold(force_env=env)
+    s = scaffold_module.settings
+    assert s.env_for_dynaconf == env
+

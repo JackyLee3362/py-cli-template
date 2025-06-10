@@ -5,7 +5,7 @@ from pprint import pprint
 from {{cookiecutter.project_slug}}.base.cache import JsonCache
 
 
-def test_config():
+def test_cache():
     dir_name = Path(tempfile.mkdtemp())
     cache = JsonCache(path=dir_name.joinpath("test.json"))
     cache.set("foo", 1)

@@ -7,7 +7,7 @@ from {{cookiecutter.project_slug}}.base.constant import (
 )
 
 
-def test_config():
+def test_constant_init_dir():
     init_dir()
     assert LOG_DIR.exists()
     assert CACHE_DIR.exists()

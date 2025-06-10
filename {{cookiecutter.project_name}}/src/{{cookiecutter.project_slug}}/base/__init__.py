@@ -16,12 +16,12 @@ class Scaffold:
         self.settings = None
         self.cache = None
 
-    def init_scaffold(self):
-        self.config_settings(CONFIG_DIR, CWD_PATH)
+    def init_scaffold(self, **kwargs):
+        self.config_settings(CONFIG_DIR, CWD_PATH, **kwargs)
         self.config_logger(self.settings.logging.to_dict())
         self.config_cache(self.settings.app.cache.url)
 
-    def config_settings(self, config_path, dotenv_path):
+    def config_settings(self, config_path, dotenv_path, **kwargs):
         # 初始配置
         self.settings = Dynaconf(
             root_path=config_path,
@@ -34,6 +34,7 @@ class Scaffold:
             # merge_enabled=True, # 列表 merge 需要注意，可能会出现问题
             load_dotenv=True,
             dotenv_path=dotenv_path,
+            **kwargs
         )
 
     def config_logger(self, d: dict):

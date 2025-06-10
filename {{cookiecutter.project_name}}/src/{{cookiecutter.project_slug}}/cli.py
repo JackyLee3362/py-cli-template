@@ -4,8 +4,8 @@ import typer
 
 import {{cookiecutter.project_slug}}
 
+log = logging.getLogger(__name__)
 cli = typer.Typer()
-log = logging.getLogger("myLogger")
 
 
 @cli.command()
