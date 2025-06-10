@@ -7,8 +7,6 @@ if __name__ == "__main__":
             "-p",
             "src",
             "--add-data",
-            "json:json",
-            "--add-data",
             "config:config",
             "--clean",
         ]
