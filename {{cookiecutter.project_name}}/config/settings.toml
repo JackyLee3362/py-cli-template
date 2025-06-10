@@ -1,0 +1,16 @@
+[default]
+app.name = "{{cookiecutter.project_slug}}"
+app.version = "0.0.1"
+app.env = "default"
+app.debug = false
+app.cache.url = "cache.json"
+
+[development]
+app.dynaconf_merge = true
+app.env = "dev"
+app.debug = true
+
+[production]
+app.dynaconf_merge = true
+app.env = "prod"
+app.debug = false

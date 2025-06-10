@@ -1,0 +1,9 @@
+[project]
+name = "{{ cookiecutter.project_name }}"
+version = "{{ cookiecutter.version }}"
+description = ""
+requires-python = ">=3.8,<3.14"
+authors = [{ name = "{{cookiecutter.author}}", email = "{{cookiecutter.email}}" }]
+readme = "README.md"
+dependencies = [
+]
