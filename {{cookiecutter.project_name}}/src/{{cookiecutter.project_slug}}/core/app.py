@@ -1,6 +1,6 @@
 import logging
 
-from {{cookiecutter.project_slug}}.base.scaffold import Scaffold
+from {{cookiecutter.project_slug}}.base import Scaffold
 
 log = logging.getLogger(__name__)
 

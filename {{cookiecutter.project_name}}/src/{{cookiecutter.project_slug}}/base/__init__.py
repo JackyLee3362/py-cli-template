@@ -17,25 +17,27 @@ class Scaffold:
         self.cache = None
 
     def init_scaffold(self, **kwargs):
-        self.config_settings(CONFIG_DIR, CWD_PATH, **kwargs)
-        self.config_logger(self.settings.logging.to_dict())
-        self.config_cache(self.settings.app.cache.url)
+        s = self.config_settings(CONFIG_DIR, CWD_PATH, **kwargs)
+        self.config_logger(s.logging.to_dict())
+        self.config_cache(s.app.cache.url)
 
     def config_settings(self, config_path, dotenv_path, **kwargs):
         # 初始配置
-        self.settings = Dynaconf(
+        s = Dynaconf(
             root_path=config_path,
             environments=True,
             default_env="default",
             # 加载文件，分别为 preload -> settings_files -> includes
             preload=["preload.*"],
-            settings_files=["logging.*", "settings.*"],
-            includes=["include.*"],
+            settings_files=["settings.*"],
+            includes=["includes.*"],
             # merge_enabled=True, # 列表 merge 需要注意，可能会出现问题
             load_dotenv=True,
             dotenv_path=dotenv_path,
             **kwargs
         )
+        self.settings = s
+        return s
 
     def config_logger(self, d: dict):
         # 日志配置
