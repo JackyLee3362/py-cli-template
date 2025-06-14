@@ -1,3 +1,4 @@
+import logging
 import sys
 from pathlib import Path
 
@@ -11,4 +12,10 @@ load_dotenv()
 if __name__ == "__main__":
     from {{cookiecutter.project_slug}}.cli import cli
 
-    cli()
+    log = logging.getLogger(__name__)
+
+    # 捕获全局异常
+    try:
+        cli()
+    except Exception as e:
+        log.error(e)

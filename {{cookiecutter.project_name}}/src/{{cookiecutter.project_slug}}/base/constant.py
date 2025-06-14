@@ -4,7 +4,7 @@ from pathlib import Path
 
 __version__ = "0.0.1"
 
-PACKAGE_PATH = Path(__file__).parent
+PACKAGE_PATH = Path(__file__).parent.parent.parent
 
 SRC_PATH = Path(__file__).parent.parent
 
