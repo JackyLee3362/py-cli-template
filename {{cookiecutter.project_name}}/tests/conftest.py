@@ -1,6 +1,6 @@
 import pytest
 
-from {{cookiecutter.project_slug}}.base import Scaffold
+from {{cookiecutter.project_slug}}.base.scaffold import Scaffold
 
 
 @pytest.fixture(scope="session")

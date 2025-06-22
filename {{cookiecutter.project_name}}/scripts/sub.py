@@ -14,8 +14,8 @@ dst_root.mkdir(parents=True, exist_ok=True)
 project_name = "my-client-project"
 project_slug = project_name.replace("-", "_")
 patterns = {
-    re.compile(project_slug): "{{ cookiecutter.project_slug }}",
-    re.compile(project_name): "{{ cookiecutter.project_name }}",
+    re.compile(project_slug): "{{cookiecutter.project_slug}}",
+    re.compile(project_name): "{{cookiecutter.project_name}}",
 }
 file_pattern = re.compile(".*\.(py|toml|md|yaml)$")
 
